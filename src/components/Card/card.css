@@ -1,0 +1,33 @@
+.card{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;    justify-content: center;
+    margin: 5rem;
+}
+
+.card img{
+    width: 30%;
+}
+
+.card__info{
+    margin-left: 3rem;
+    width: 30rem;
+}
+
+.card__info p{
+    font-family: 'Cinzel', serif;
+}
+.card__title{
+    font-size: 2.5rem;
+}
+
+.card__descrip{
+    margin-top: 2.5rem;
+    font-size: 1.2rem;
+}
+.card__avancar{
+    padding-top: 7rem;
+    align-items: center;
+    display:flex;
+    font-size: 0.8rem;
+}

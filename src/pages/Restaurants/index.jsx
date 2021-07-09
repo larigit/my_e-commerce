@@ -1,57 +1,39 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Footer from "../../components/Footer";
+import Card from "../../components/Card";
 
 
 import Header from "../../components/Header";
 
 const Restaurants = () => {
 
-    const [food, setFood] = useState([]);
+    const [restaurants, setRestaurants] = useState([]);
 
     useEffect(() =>{
         const data = async() => {
             try{
-                const options = {
-                    method: 'GET',
-                    url: 'https://tasty.p.rapidapi.com/recipes/list',
-                    params: {from: '0', size: '20', tags: 'under_30_minutes'},
-                    headers: {
-                        'x-rapidapi-key': 'b813ef501bmsh810b03545575f35p1b5115jsn53f4951326dc',
-                        'x-rapidapi-host': 'tasty.p.rapidapi.com'
-                    }
-                }; 
-                const {data} = await axios.request(options);
-                setFood(data);
+                const {data} = await axios.get('https://my-json-server.typicode.com/larigit/larigit-fakeapi/restaurantes');
+                setRestaurants(data);
             }catch(e){
                 console.log(e, "erro");
             }
         }
         data();
     },[]);
-    console.log(food);
-    // console.log(food.results.map(item=>{
-    //     return (item.thumbnail_url)
-    // }));
-    // if(food.results !== undefined){
-    //     console.log(food.results.map(item=>{
-    //         return (item.thumbnail_url)
-    //     }));
-    // }
-
-    // useEffect(()=>{
-    //     console.log(food.results.map(item=>{
-    //         return (item.thumbnail_url)
-    //     }))
-    // },[food])
-
+    console.log(restaurants)
     return(
         <>
             <Header />
-            {/* <div>
-                {fotos.map(item=>(
-                    item.thumbnail_url
+            
+            <div>
+                {restaurants&&restaurants.map(item=>(
+                    <>
+                    <Card imagem={item.pratos[0].image} nome={item.name} categoria={item.categoria} alt={`imagem de ${item.categoria}`}/>
+                    </>
                 ))}
-            </div> */}
+            </div>
+            <Footer/>
         </>
     )
 }
