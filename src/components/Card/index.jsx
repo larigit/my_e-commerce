@@ -1,4 +1,4 @@
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import './card.css'
 import avancar from '../../assets/images/avancar.png'
