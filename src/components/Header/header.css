@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    font-family: 'Poiret One', cursive;
+    padding: 0;
+}
+
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #693B3B;
+    height: 8rem;
+}
+.header__logo{
+    display: flex;
+    align-items: center;
+    
+}
+
+.header__logo h1{
+    color:white;
+    font-size: 4rem;
+    font-weight: lighter;
+}
+
+.header__logo img{
+    width: 3rem;
+    height: auto;
+    margin-right: 1.5rem;
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    padding: 14px 25px;
+    height: 1rem;
+    background: #F2F1F1;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+}
+
+.input{
+    border: none;
+    outline: none;
+    height: 1.5rem;
+    background: #F2F1F1;
+    width: 20rem;
+    text-align: center;
+}
+
+button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+.header__reactions{
+    display: flex;
+    align-items: center;
+}
+
+.header__like, .header__cart, .header__contact{
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.header__cart p{
+    font-family: 'Teko', sans-serif;
+    font-size: 1.7rem;
+    color: white;
+    padding-left: 0.5rem;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #F2F1F1;
+    height: 5rem;
+    font-size: 1.5rem;
+}
+
+.nav__link{
+    text-decoration: none;
+    color: black;
+    font-family: 'Poiret One', cursive;
+}
+
