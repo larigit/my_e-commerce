@@ -11,9 +11,9 @@ const Footer = () => {
             <div className="footer__contacts">
                 <p>ENCONTRE-NOS EM</p>
                 <div className="contact__icons">
-                    <a href="#"><img src={facebook} alt="icone do facebook"/></a>
-                    <a href="#"><img src={instagram} alt="icone do instagram"/></a>
-                    <a href="#"><img src={whatsapp} alt="icone do whatsapp"/></a>
+                    <a href="facebookpage"><img src={facebook} alt="icone do facebook"/></a>
+                    <a href="instagrampage"><img src={instagram} alt="icone do instagram"/></a>
+                    <a href="whatsapppage"><img src={whatsapp} alt="icone do whatsapp"/></a>
                 </div>
             </div>
             <div className="form__user">

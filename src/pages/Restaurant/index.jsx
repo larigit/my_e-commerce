@@ -32,13 +32,3 @@ const Restaurant = ({dado}) => {
 }
 
 export default Restaurant;
-
-{/* {restaurant&&restaurant.map(item=>(
-                <p>{item.pratos.map((item)=>(
-                    <div>
-                        <img src={item.image} alt={item.name}/>
-                        <p>{item.name}</p>
-                        <p>`R${item.price}`</p>
-                    </div>
-                ))}</p>
-            ))} */}
