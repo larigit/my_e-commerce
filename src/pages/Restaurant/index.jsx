@@ -1,25 +1,39 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Card from '../../components/Card'
 
-const Restaurant = () => {
-    const [restaurant, setRestaurant] = useState([]);
-
-    useEffect(() =>{
-        const data = async() => {
-            try{
-                const {data} = await axios.get('https://my-json-server.typicode.com/larigit/larigit-fakeapi/restaurantes');
-                setRestaurant(data);
-            }catch(e){
-                console.log(e, "erro");
-            }
-        }
-        data();
-    },[]);
-    console.log(restaurant&&restaurant[0])
-    
+import {useParams} from 'react-router-dom'
+const Restaurant = ({dado}) => {
+    let { restaurant } = useParams();
+    console.log((dado[0]&&dado[0].name.replaceAll(' ','').toLowerCase())===restaurant)
     return(
         <div>
-            {restaurant&&restaurant.map(item=>(
+            <Header />
+           <p>{dado.map((item)=>(
+               ((item&&item.name.replaceAll(' ','').toLowerCase()) === restaurant) 
+               ?
+
+               item.pratos.map(item=>(
+                   <Card imagem={item.image} nome={item.name} categoria={`R$ ${item.price}`}/>
+
+               ))
+               
+               :
+               
+               false
+
+               
+           ))}  
+            </p>
+            <Footer />
+            
+        </div>
+    )
+}
+
+export default Restaurant;
+
+{/* {restaurant&&restaurant.map(item=>(
                 <p>{item.pratos.map((item)=>(
                     <div>
                         <img src={item.image} alt={item.name}/>
@@ -27,9 +41,4 @@ const Restaurant = () => {
                         <p>`R${item.price}`</p>
                     </div>
                 ))}</p>
-            ))}
-        </div>
-    )
-}
-
-export default Restaurant;
+            ))} */}
