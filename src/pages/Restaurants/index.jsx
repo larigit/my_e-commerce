@@ -29,7 +29,7 @@ const Restaurants = () => {
             <div>
                 {restaurants&&restaurants.map(item=>(
                     <>
-                    <Card imagem={item.pratos[0].image} nome={item.name} categoria={item.categoria} alt={`imagem de ${item.categoria}`}/>
+                        <Card imagem={item.pratos[0].image} nome={item.name} categoria={item.categoria} alt={`imagem de ${item.categoria}`}/>
                     </>
                 ))}
             </div>
