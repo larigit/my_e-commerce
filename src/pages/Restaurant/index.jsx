@@ -1,10 +1,39 @@
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Card from '../../components/Card'
 
-const Restaurant = ({dado, props}) => {
-
+import {useParams} from 'react-router-dom'
+const Restaurant = ({dado}) => {
+    let { restaurant } = useParams();
+    console.log((dado[0]&&dado[0].name.replaceAll(' ','').toLowerCase())===restaurant)
     return(
         <div>
-            <h1>eai</h1>
-            {/* {restaurant&&restaurant.map(item=>(
+            <Header />
+           <p>{dado.map((item)=>(
+               ((item&&item.name.replaceAll(' ','').toLowerCase()) === restaurant) 
+               ?
+
+               item.pratos.map(item=>(
+                   <Card imagem={item.image} nome={item.name} categoria={`R$ ${item.price}`}/>
+
+               ))
+               
+               :
+               
+               false
+
+               
+           ))}  
+            </p>
+            <Footer />
+            
+        </div>
+    )
+}
+
+export default Restaurant;
+
+{/* {restaurant&&restaurant.map(item=>(
                 <p>{item.pratos.map((item)=>(
                     <div>
                         <img src={item.image} alt={item.name}/>
@@ -13,8 +42,3 @@ const Restaurant = ({dado, props}) => {
                     </div>
                 ))}</p>
             ))} */}
-        </div>
-    )
-}
-
-export default Restaurant;
