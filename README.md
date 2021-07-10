@@ -14,4 +14,4 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Subindo o Projeto
 
-A aplicação foi hospedada no Netlify, neste [link](https://reactsimpsons.netlify.app/).
+A aplicação foi hospedada no Netlify, neste [link](https://foodcommerce.netlify.app/).
