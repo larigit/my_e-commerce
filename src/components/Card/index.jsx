@@ -13,7 +13,7 @@ return(
             <p className="card__descrip">{props.categoria}</p>
             <div className="card__avancar">
                 <p >Clique para conhecer</p>
-                <button><img src={avancar} alt="avançar"/></button>
+                <Link to={`/restaurants/${props.nome&&props.nome.replaceAll(' ','').toLowerCase()}`}><img src={avancar} alt="avançar"/></Link>
             </div>
         </div>
     </div>
