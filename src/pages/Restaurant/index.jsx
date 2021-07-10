@@ -1,25 +1,10 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
 
-const Restaurant = () => {
-    const [restaurant, setRestaurant] = useState([]);
+const Restaurant = ({dado, props}) => {
 
-    useEffect(() =>{
-        const data = async() => {
-            try{
-                const {data} = await axios.get('https://my-json-server.typicode.com/larigit/larigit-fakeapi/restaurantes');
-                setRestaurant(data);
-            }catch(e){
-                console.log(e, "erro");
-            }
-        }
-        data();
-    },[]);
-    console.log(restaurant&&restaurant[0])
-    
     return(
         <div>
-            {restaurant&&restaurant.map(item=>(
+            <h1>eai</h1>
+            {/* {restaurant&&restaurant.map(item=>(
                 <p>{item.pratos.map((item)=>(
                     <div>
                         <img src={item.image} alt={item.name}/>
@@ -27,7 +12,7 @@ const Restaurant = () => {
                         <p>`R${item.price}`</p>
                     </div>
                 ))}</p>
-            ))}
+            ))} */}
         </div>
     )
 }
